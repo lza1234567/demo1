@@ -14,6 +14,9 @@ namespace demo1.Uitl
         {
             // 将 UserDto 映射到 Users
             CreateMap<UserDtoAdd, Users>();
+            // 将 UserDto 映射到 Users
+            CreateMap<UsersEditDto, Users>()
+            .ForAllMembers(opts => opts.Condition((src, dest, srcMember) => srcMember != null));
 
             // 如果需要反向映射（实体→DTO）
             // CreateMap<Users, UserDto>(); 
